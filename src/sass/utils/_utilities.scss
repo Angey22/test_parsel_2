@@ -1,0 +1,51 @@
+// Utility class for resetting settings links &  adding an accent color on hover and focus of the corresponding links
+.link {
+    // Decor
+    text-decoration: none;
+    
+        // Hover & Focus effects
+        &:hover, &:focus {
+        color: var(--accent-text-color);
+        }
+}
+
+// Utility class that hides the display of headings from the user, but remains they visible to search engines
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+// Utility class for simulating the display of the current position on site in the site menu
+.current-position {
+    // Position
+    position: relative;
+
+    // Decor
+    color: var(--accent-text-color);
+
+    // Decorative line - current page indicator
+    &::after {
+        // Position
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        // Geometry
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+
+        // Decor
+        background-color: var(--accent-text-color);
+        border-radius: 2px;
+    }
+}

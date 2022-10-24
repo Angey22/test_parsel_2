@@ -1,0 +1,198 @@
+.footer {
+    // Geometry
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    // Decor
+    background-color: var(--complementary-background-color);
+}
+
+.footer__container {
+    // Text
+    text-align: center;
+    
+        // Changing geometri by Breakpoint (768px)
+        @media screen and (min-width: $tablet) {
+            // Geometry
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            text-align: start;
+        }
+}
+
+// First footer content block
+.footer-contact-block {
+    // Geometry
+    margin-bottom: 60px;
+
+        // Changing geometri by Breakpoint (768px)
+        @media screen and (min-width: $tablet) {
+            // Geometry
+            margin-right: 165px;
+        }
+
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            margin-bottom: 0;
+            margin-right: 90px;
+        }
+}
+
+.footer-contacts__item:not(:last-child) {
+    // Geometry
+    margin-bottom: 8px;
+
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+        margin-bottom: 9px;
+    }
+}
+
+.footer-contacts__link {
+    // Text
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--individual-text-color);
+    
+    // Animation execution options
+    transition: color 250ms var(--timing-function);
+}
+
+.footer-contacts__link--map {
+    // Text
+    color: var(--complementary-text-color);
+}
+
+// Second footer content block
+.footer-social-block {
+    // Geometry
+    margin-bottom: 60px;
+
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            padding-top: 12px;
+            margin-bottom: 0;
+            margin-right: 93px;
+        }
+}
+
+.social-list-title,
+.subscription-title {
+    // Geometry
+    margin-bottom: 20px;
+
+    // Text
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--complementary-text-color);
+}
+
+// Third footer content block
+.footer-subscription-block {
+    // Changing geometri by Breakpoint (1200px)
+    @media screen and (min-width: $desktop) {
+        // Geometry
+        padding-top: 12px;
+    }
+}
+
+.subscription-form {
+    // Geometry
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            flex-direction: row;
+        }
+}
+
+.subscription-input {
+    // Geometry
+    height: 50px;
+    width: 100%;
+    padding: 15px 16px;
+    margin-bottom: 20px;
+
+        // Changing geometri by Breakpoint (480px)
+        @media screen and (min-width: $mobile) {
+            // Geometry
+            width: 450px;
+        }
+    
+        // Changing geometri by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            width: 358px;
+            margin-bottom: 0;
+            margin-right: 12px;
+            padding: 15px 16px;
+        }
+
+    // Text
+    color: rgba(255, 255, 255, 0.6);
+
+    // Decor
+    background-color: #2f303a;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+
+        // Placeholder setting
+        &::placeholder {
+            // Text
+            font-size: 16px;
+            line-height: 1, 25;
+            color: rgba(255, 255, 255, 0.6);
+        }
+}
+
+.subscription-btn {
+    // Geometry
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+
+    // Decor
+    border: none;
+    border-radius: 4px;
+    background-color: #2196f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    // Cursor effect
+    cursor: pointer;
+
+    // Animation execution options
+    transition: background-color 250ms var(--timing-function);
+
+        // Hover & Focus effects
+        &:hover, &:focus {
+            background-color: #188ce8;
+        }
+}
+
+.subscription-btn__text {
+    // Geometry
+    display: block;
+    margin-right: 10px;
+    
+    // Text
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    color: var(--complementary-text-color);
+}

@@ -1,0 +1,84 @@
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal-window">
+    <button class="modal-window__close-btn link" data-modal-close>
+      <svg width="18px" height="18px">
+        <use href="./images/icons.svg#icon-cloe-black-cross"></use>
+      </svg>
+    </button>
+    <h1 class="modal-window__title">Залиште свої дані, ми вам передзвонимо</h1>
+
+    <form class="form js-speaker-form">
+      <div class="form__field">
+        <label for="name" class="form__label">Ім'я</label>
+        <input
+          type="text"
+          class="form__input"
+          name="name"
+          id="name"
+          placeholder=" "
+        />
+        <svg width="18" height="18" class="form__icon">
+          <use href="./images/icons.svg#icon-black-person"></use>
+        </svg>
+      </div>
+
+      <div class="form__field">
+        <label for="tel" class="form__label">Телефон</label>
+        <input
+          type="tel"
+          class="form__input"
+          name="tel"
+          id="tel"
+          placeholder=" "
+        />
+        <svg width="18" height="18" class="form__icon">
+          <use href="./images/icons.svg#icon-black-phone"></use>
+        </svg>
+      </div>
+
+      <div class="form__field">
+        <label for="mail" class="form__label">Пошта</label>
+        <input
+          type="email"
+          class="form__input"
+          name="mail"
+          id="mail"
+          placeholder=" "
+        />
+        <svg width="18" height="18" class="form__icon">
+          <use href="./images/icons.svg#icon-black-email"></use>
+        </svg>
+      </div>
+
+      <div class="form__field">
+        <label for="comment" class="form__label">Коментар</label>
+        <textarea
+          name="comment"
+          id="comment"
+          placeholder="Введіть текст"
+          class="form__input form__input--multiple-lines"
+        ></textarea>
+      </div>
+      <div class="form__checkbox-field">
+        <label class="form__checkbox-label">
+          <input
+            class="form__checkbox-input"
+            type="checkbox"
+            name="checkbox"
+            value="terms-&-newsletter"
+            required
+          />
+          <span class="form__checkbox-icon"></span>
+          <span class="form__checkbox-text"
+            >Погоджуюся з розсилкою та приймаю&nbsp;</span
+          >
+          <a class="form__checkbox-link" href="#">Умови договору</a>
+        </label>
+      </div>
+
+      <a class="form__checkbox-link--mobile" href="#">Умови договору</a>
+
+      <button type="submit" class="form__btn">Відправити</button>
+    </form>
+  </div>
+</div>

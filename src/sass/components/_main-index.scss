@@ -1,0 +1,412 @@
+// Styles for the "Hero" section
+.hero {
+    // Geometry
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding-top: 118px;
+    padding-bottom: 118px;
+    max-height: 400px;
+    max-width: $mobile;
+    
+    // Decor
+    background-color: #c4c4c4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_mob_480x400_1x.jpg);
+        
+        // Redefining the path to the background-image with a pixel-ratio 2x
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            // Decor
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_mob_960x800_2x.jpg);
+        }
+
+        // Redefining the path to the background-image with a pixel-ratio 3x
+        @media (min-device-pixel-ratio: 3),
+        (min-resolution: 288dpi),
+        (min-resolution: 3dppx) {
+            // Decor
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_mob_1440x1200_3x.jpg);
+        }
+
+        // Changing geometry & background-image by Breakpoint (481px)
+        @media screen and (min-width: 481px) {
+            // Geometry
+            max-width: $tablet;
+
+            // Decor
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_tab_768x400_1x.jpg);
+                
+                // Redefining the path to the background-image with a pixel-ratio 2x
+                @media (min-device-pixel-ratio: 2),
+                (min-resolution: 192dpi),
+                (min-resolution: 2dppx) {
+                    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_tab_1536x800_2x.jpg);
+                    }
+                
+                // Redefining the path to the background-image with a pixel-ratio 3x
+                @media (min-device-pixel-ratio: 3),
+                (min-resolution: 288dpi),
+                (min-resolution: 3dppx) {
+                    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_tab_2304x1200_3x.jpg);
+                }
+        }
+        
+        // Changing geometry & background-image by Breakpoint (769px)
+        @media screen and (min-width: 769px) {
+            // Geometry
+            max-width: $preDesktop;
+
+            // Decor
+            background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_desk_1600x600_1x.jpg);
+                
+                // Redefining the path to the background-image with a pixel-ratio 2x
+                @media (min-device-pixel-ratio: 2),
+                (min-resolution: 192dpi),
+                (min-resolution: 2dppx) {
+                    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_desk_3200x1200_2x.jpg);
+                }
+                
+                // Redefining the path to the background-image with a pixel-ratio 3x
+                @media (min-device-pixel-ratio: 3),
+                (min-resolution: 288dpi),
+                (min-resolution: 3dppx) {
+                    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_desk_4800x1800_3x.jpg);
+                }
+
+            // Changing geometry Breakpoint (1200px)
+            @media screen and (min-width: $desktop) {
+                // Geometry
+                padding-top: 200px;
+                padding-bottom: 200px;
+                max-height: 600px;
+                max-width: 1600px;
+            }
+        }
+}
+
+.hero__title {
+    // Geometry
+    margin-bottom: 30px;
+
+    // Text
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.6;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--complementary-text-color);
+
+        // Changing text style by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            font-size: 44px;
+            line-height: 1.4;
+        }
+}
+
+.hero__btn {
+    // Geometry
+    display: inline-block;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+
+        // Changing geometry by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            min-width: 216px;
+        }
+
+    // Decor
+    background: var(--accent-text-color);
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    // Text
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--complementary-text-color);
+    
+    // Interactivity setting
+    cursor: pointer;
+
+    // Animation execution options
+    transition: background-color 250ms var(--timing-function);
+
+        // Hover & Focus effects
+        &:hover, &:focus {
+            background-color: #188ce8;
+        }
+}
+
+// General styles of typical elements of the rest of the page sections
+.section-title {
+    // Geometry
+    margin-bottom: 30px;
+
+    // Text
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--secondary-text-color);
+
+        // Changing geometry & text by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            margin-bottom: 50px;
+
+            // Text
+            font-size: 36px;
+        }
+}
+
+// Styles for the "Peculiarities" section
+.peculiarities__conteainer,
+.team__container,
+.client__container {
+    // Geometry
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+        // Changing geometry by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+            // Geometry
+            padding-top: 94px;
+            padding-bottom: 94px;
+        }
+}
+
+.peculiarities-list {
+    // Geometry
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+
+    &__item {
+        // Geometry
+        max-width: 450px;
+
+            // Changing geometry by Breakpoint (768px)
+            @media screen and (min-width: $tablet) {
+                max-width: 354px;
+            }
+
+            // Changing geometry by Breakpoint (1200px)
+            @media screen and (min-width: $desktop) {
+                max-width: 270px;
+            }
+    }
+
+    // Decorative background & location setting of icons with id: 'icon-antenna'; 'icon-clock'; 'icon-diagram'; 'icon-astronaut'
+    &__decor {
+        // Geometry
+        display: flex;
+        height: 120px;
+        border-radius: 4px;
+        margin-bottom: 30px;
+    
+        // Icons location setting
+        justify-content: center;
+        align-items: center;
+    
+        // Decor
+        background-color: var(--secondary-background-color);
+    }
+
+    &__title {
+        // Geometry
+        margin-bottom: 10px;
+    
+        // Text
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-transform: uppercase;
+        color: var(--secondary-text-color);
+        text-align: center;
+
+            // Changing text style by Breakpoint (768px)
+            @media screen and (min-width: $tablet) {
+                text-align: start;
+            }
+    }
+
+    &__text {
+        // Text
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+// Styles for the "Work" section
+.work {
+    display: none;
+
+    // Changing visibility by Breakpoint (1200px)
+    @media screen and (min-width: $desktop) {
+        display: block;
+    }
+
+    &__container {
+        padding-bottom: 94px;
+    }
+}
+
+.work-list {
+    // Geometry
+    display: flex;
+    justify-content: center;
+    
+    // Distance between items of 'work-list'
+    gap: 30px;
+
+        &__itm {
+        // Position
+        position: relative;
+        }
+        
+        &__label {
+            // Position
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+        
+            // Geometry
+            padding: 27px 0;
+        
+            // Decor
+            background: rgba(47, 48, 58, 0.8);
+        }
+
+        &__title {
+            // Text
+            font-weight: 700;
+            font-size: 14px;
+            line-height: calc(16 / 14);
+            text-align: center;
+            text-transform: uppercase;
+            color: var(--complementary-text-color);
+        }
+}
+
+// Styles for the "Our Team" section
+// Section style modifier
+.section--highlighted {
+    //  Decor
+    background-color: var(--secondary-background-color);
+}
+
+.team-list {
+    // Geometry
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    &__item {
+        // Geometry
+        width: 450px;
+        padding-bottom: 24px;
+
+        // Text
+        text-align: center;
+        
+        // Decor
+        background: var(--complementary-text-color);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 0px 0px 4px 4px;
+
+            // Changing geometry by Breakpoint (768px)
+            @media screen and (min-width: $tablet) {
+                width: 354px;
+            }
+
+            // Changing geometry by Breakpoint (1200px)
+            @media screen and (min-width: $desktop) {
+                // Geometry
+                width: 270px;
+                padding-bottom: 30px;
+            }
+    }
+
+    &__img {
+        // Geometry
+        margin-bottom: 30px;
+    }
+
+    &__name {
+        // Geometry
+        margin-bottom: 10px;
+    
+        // Text
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.2;
+        color: var(--secondary-text-color);
+    }
+
+    &__position {
+        // Geometry
+        margin-bottom: 16px;
+    
+        // Text
+        font-size: 16px;
+        line-height: 1.2;
+    }
+}
+
+// Styles for the "Regular Clients" section
+.client-list {
+    // Geometry
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    &__link {
+        // Icons location setting
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        // Decor-color general setting
+        color: #afb1b8;
+    
+        // Link geometry
+        width: 210px;
+        height: 92px;
+        border: 1px solid currentColor;
+        border-radius: 4px;
+    
+        // for SVG icon with id: 'icon-client_logo_1'...'icon-client_logo_6'
+        fill: currentColor;
+    
+        // Animation execution options
+        transition: color 250ms var(--timing-function);
+
+            // Changing link geometry by Breakpoint (768px)
+            @media screen and (min-width: $tablet) {
+                // Geometry
+                width: 226px;
+            }
+            
+            // Changing link geometry by Breakpoint (1200px)
+            @media screen and (min-width: $desktop) {
+                // Geometry
+                width: 170px;
+            }
+    }
+}
+

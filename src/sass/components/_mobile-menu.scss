@@ -1,0 +1,169 @@
+// Mobile header button
+.menu-toggle {
+  // Geometry
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  // Decor
+  border: none;
+  background-color: transparent;
+
+  // Interactivity setting
+  cursor: pointer;
+
+    // Changing visibility by Breakpoint (768px)
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }    
+}
+  
+// Mobile header buttons style for SVG icons: 'icon-menu_40px' & 'icon-close_40px'
+.icon-menu,
+.icon-cross {
+  fill: currentColor;
+}
+
+// Mobile menu container
+.menu-container {
+  // Posiyion
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  
+  // Geometry
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+
+  // Interactivity setting
+  overflow-y: scroll;
+
+  // Decor
+  background-color: var(--maine-background-color);
+    
+  // Animation effect
+  transform: translateX(100%);
+
+  // Animation execution options
+  transition: transform 250ms var(--timing-function);
+}
+
+// Animation start condition
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+// Location of the mobile menu close button
+.menu-container .menu-toggle {
+  // Posiyion
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+// First block mobile menu
+.mobile-menu {
+  margin-bottom: 32px;
+  
+  &__item:not(:last-child) {
+    // Geometry
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    // Text
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+
+    // Utility class for simulating the display of the current position on site in the mobile site menu
+    &--active {
+      // Decor
+      text-decoration: none;
+      color: var(--accent-text-color);
+
+      // Hover & Focus effects
+        &:hover, &:focus {
+          color: var(--extra-accent-text-color);
+        }
+    }
+  }
+}
+
+// Second block mobile menu
+// Mobile contacts
+.mobile-contacts {
+  // Geometry
+  margin-bottom: 64px;
+
+    &__item:not(:last-child) {
+      // Geometry
+      margin-bottom: 32px;
+    }
+
+    &__tel {
+      // Text
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+
+      // Decor
+      text-decoration: none;
+      color: var(--accent-text-color);
+
+        // Hover & Focus effects
+          &:hover, &:focus {
+            color: var(--extra-accent-text-color);
+          }
+    }
+
+    &__mail {
+      // Text
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      color: var(--maine-text-color);
+    }
+}
+
+// Mobile social
+.mobile-social {
+  // Geometry
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+    &__item:not(:last-child) {
+      // Geometry
+      padding-right: 10px;
+
+      // Decor
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+
+    &__link {
+          // Text
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 1.2;
+          letter-spacing: 0.02em;
+    
+          // Decor
+          text-decoration: none;
+          color: var(--accent-text-color);
+    
+          // Hover & Focus effects
+          &:hover, &:focus {
+            color: var(--extra-accent-text-color);
+          }
+    }
+}

@@ -1,2 +1,19 @@
 @import './common';
 @import './example';
+
+// Connecting '_parshals' from the "Utilities" folder
+@import 'utils/resetting';
+@import 'utils/variables';
+@import 'utils/utilities';
+@import 'utils/container';
+
+// Connecting '_parshals' from the "Components" folder
+@import 'components/body';
+@import 'components/logo';
+@import 'components/page-header';
+@import 'components/mobile-menu';
+@import 'components/modal-window';
+@import 'components/page-footer';
+@import 'components/social-list';
+@import 'components/main-index';
+@import 'components/main-portfolio';

@@ -1,0 +1,56 @@
+// General parameters
+.social-list {
+    // Geometry
+    display: flex;
+    justify-content: center;
+}
+
+.social-list__item:not(:last-child) {
+    // Geometry
+    margin-right: 10px;
+}
+
+.social-list__link {
+    // Icons location setting
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // Link geometry
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+// Parameters for the footer
+.social-list__link--footer {
+    // Decor
+    background-color: rgba(255, 255, 255, 0.1);
+
+    // for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin;
+    fill: var(--complementary-text-color);
+    
+    // Animation execution options
+    transition: background-color 250ms var(--timing-function);
+        
+        // Hover & Focus effects
+        &:hover, &:focus {
+            background-color: var(--accent-text-color);
+        }
+}
+
+// Parameters for the section 'Our Team' - index.html
+.social-list__link--team {
+    // for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin;
+    fill: #afb1b8;
+    
+    // Animation execution options
+    transition: background-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+    
+        // Hover & Focus effects
+        &:hover, &:focus {
+            background-color: var(--accent-text-color);
+            // for SVG icon with id: 'icon-instagram'; 'icon-twitter'; 'icon-facebook'; 'icon-linkedin;
+            fill: #fff;
+        }
+}

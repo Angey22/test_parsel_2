@@ -1,0 +1,47 @@
+// Website logo
+.logo {
+    // Geometri
+    display: block;
+
+    // Text
+    font-family: $fontLogo;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--accent-text-color);
+    
+    // Decor
+    text-decoration: none;
+
+    // Changing style by Breakpoint (1200px)
+    @media screen and (min-width: $desktop) {
+        font-size: 26px;
+        line-height: 1.2;
+    }    
+}
+
+.logo__text-header {
+    color: var(--logo-dicor-color);
+}
+
+.logo__text-footer {
+    color: var(--complementary-text-color);
+}
+
+.header__logo {
+    // Changing geometri by Breakpoint
+    @media screen and (min-width: $tablet) {
+        margin-right: 88px;
+    }
+    
+    // Changing geometri by Breakpoint
+    @media screen and (min-width: $desktop) {
+        margin-right: 93px;
+    }
+   
+}
+
+.footer__logo {
+    // Geometry
+    margin-bottom: 20px;
+}

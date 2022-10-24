@@ -1,0 +1,377 @@
+// Modal-window back background
+.backdrop {
+    // Position
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    overflow-y: scroll;
+        
+        // Changing geometry by Breakpoint (480px)
+        @media screen and (max-width: $mobile)  {
+            // Geometry
+            padding: 93px 15px;
+        }
+
+    // Decor
+    background: rgba(0, 0, 0, 0.2);
+
+    // Animation effects
+    opacity: 1;
+
+    // Animation execution options
+    transition: opacity 250ms var(--timing-function);
+
+        // Modal-window hidden states
+        &.is-hidden {
+            // Effects
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+    
+            // Animation execution options
+            transition: opacity 250ms var(--timing-function), visibility 250ms var(--timing-function);
+        }
+
+        // Animation settings of hiding modal-window
+        &.is-hidden .modal-window {
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+}
+
+//Helper classes for JavaScript code in 'modal.js' file: - 'is-hidden' for hidden modal-window & background; -'no-scroll' for stop scrolling page, when modal-window open.
+
+
+// Modal-window settings
+.modal-window {
+    // Position
+    position: relative;
+    
+    // Geometry
+    border-radius: 4px;
+    padding: 40px;
+        
+        // Changing location & geometry by Breakpoint (480px)
+        @media screen and (min-width: $mobile) {
+            // Position
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+
+            // Geometry
+            width: 450px;
+        }
+
+        // Additional position settings required for scrolling the modal window when the viewport height is less than 610px
+        @media screen and (min-width: $mobile) and (min-height: 610px) {
+            // Position
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        // Changing geometry by Breakpoint (1200px)
+        @media screen and (min-width: $desktop) {
+                // Geometry
+            width: 528px;
+        }
+
+    // Decor
+    background-color: var(--maine-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    // Animation execution options
+    transition: transform 350ms var(--timing-function), scale 350ms var(--timing-function);
+
+        &__close-btn {
+            // Position
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            
+            // Geometry
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            
+            // Decor
+            background: var(--maine-background-color);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #000;
+            
+            // Effects
+            cursor: pointer;
+            
+            // for SVG icon with id: 'icon-cloe-black-cross'
+            fill: currentColor;
+            
+            // Animation execution options
+            transition: color 250ms var(--timing-function);
+        }
+
+        &__title {
+            // Geometry
+            margin-bottom: 12px;
+            
+            // Text
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: center;
+            color: var(--secondary-text-color);
+
+                // Changing text style by Breakpoint (1200px) 
+                @media screen and (min-width: $desktop) {
+                    // Text
+                    font-size: 20px;
+                    line-height: 1.15;
+                }
+        }
+}
+
+// Form settings
+.form {
+        &__field {
+            // Position
+            position: relative;
+            
+            // Geometry
+            display: flex;
+            flex-direction: column;
+
+            &:not(:first-child) {
+                // Geometry
+                margin-top: 10px;
+            }
+        }
+
+        &__label {
+            // Geometry
+            margin-bottom: 4px;
+            
+            // Text
+            font-size: 12px;
+            line-height: 1.2;
+            letter-spacing: 0.01em;
+        }
+
+        &__input {
+            // Geometry
+            width: 100%;
+            margin: 0;
+            padding: 12px 15px 12px 42px;
+            border: 1px solid rgba(33, 33, 33, 0.2);
+            border-radius: 4px;
+            
+            // Text
+            font-size: 12px;
+            line-height: 1.2;
+            
+            // Animation execution options
+            transition: border 250ms var(--timing-function);
+
+            // Focus decoration effect for 'form__input'
+            &:focus {
+                outline: 0;
+                border: 1px solid var(--accent-text-color);
+            }
+
+            // Focus decoration effect for 'form__icon'
+            &:focus~.form__icon {
+                color: #2196f3;
+            }
+            
+            // Additional textarea settings
+            &--multiple-lines {
+                // Geometry
+                width: 100%;
+                height: 120px;
+                padding: 12px 16px;
+
+                // Effects
+                resize: none;
+
+                &::placeholder {
+                    // Text
+                    letter-spacing: 0.01em;
+                    color: rgba(117, 117, 117, 0.5);
+                }
+            }
+        }
+
+        &__icon {
+            // Position
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            
+            // Geometry
+            width: 20px;
+            height: 20px;
+
+            // Decor
+            color: #212121;
+            
+            // for SVG icon with id: 'icon-black-person', 'icon-black-phone' & 'icon-black-email'
+            fill: currentColor;
+            
+            // Animation execution options
+            transition: color 250ms var(--timing-function);
+        }
+
+        // Checkbox settings
+        &__checkbox-field {
+            // Geometry
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            
+                // Changing geometry by Breakpoint (480px)
+                @media screen and (min-width: $mobile) {
+                    // Geometry
+                    margin-bottom: 30px;
+                }
+
+            // Text
+            font-size: 12px;
+            line-height: 1.2;
+                
+                // Changing text style by Breakpoint (1200px)
+                @media screen and (min-width: $desktop) {
+                    // Text
+                    font-size: 14px;
+                    line-height: 1.7;
+                }
+        }
+
+        &__checkbox-label {
+            // Position
+            position: relative;
+
+            // Geometry
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__checkbox-input {
+            // Hiding the standard checkbox image
+            @extend .visually-hidden;
+
+            // Focus effects
+            &:focus ~ .form__checkbox-icon {
+                outline: 3px solid #000;
+                border-color: var(--accent-text-color);
+            }
+
+            // Checked effects
+            &:checked ~ .form__checkbox-icon {
+                // General decor settings
+                border: 2px solid var(--accent-text-color);
+                background-color: var(--accent-text-color);
+
+                // Inline SVG background-image
+                background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.957 4.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z' fill='%23fff' stroke='%23fff' stroke-width='.2'/%3E%3C/svg%3E");
+
+                // Background-image settings
+                background-size: contain;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &__checkbox-icon {
+            // Geometry
+            display: block;
+            width: 16px;
+            height: 15px;
+            margin-right: 8px;
+            
+            // Decor
+            border: 2px solid #212121;
+            border-radius: 2px;
+        }
+
+        &__checkbox-text {
+            display: block;
+        }
+
+        &__checkbox-link {
+            // Geometry
+            display: block;
+
+            // Text
+            color: var(--accent-text-color);
+
+            // Animation execution options
+            transition: color 250ms var(--timing-function);
+
+            // Hover & Focus effects
+            &:hover, &:focus {
+                color: #2077be;
+            }
+            
+            // Changing visibility by Breakpoint (479px)
+            @media screen and (max-width: $preMobile) {
+                display: none;
+            }
+
+            // Auxiliary element - a link needed to normalize the appearance of the checkbox when the viewport is less than 480px
+            &--mobile {
+                // Geometry
+                display: block;
+                text-align: center;
+                margin: 8px auto 20px auto;
+                
+                // Text
+                font-size: 12px;
+                line-height: 1.2;
+                color: var(--accent-text-color);
+
+                // Changing visibility by Breakpoint (480px)
+                @media screen and (min-width: $mobile) {
+                    display: none;
+                }
+            }
+        }
+
+        &__btn {
+            // Geometry
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+            
+            // Text
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 1.9;
+            letter-spacing: 0.06em;
+            color: var(--complementary-text-color);
+            
+            // Decor
+            border: none;
+            border-radius: 4px;
+            background-color: #2196f3;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+            
+            // Effects
+            cursor: pointer;
+            
+            // Animation execution options
+            transition: background-color 250ms var(--timing-function);
+
+            // Hover & Focus effects
+            &:hover, &:focus {
+                background-color: #188ce8;
+            }
+        }
+}
+
+

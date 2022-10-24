@@ -1,0 +1,19 @@
+// Reset indentation settings in a tag group
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+// Service setting for all lists
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+// Service setting of geometry rules for all images
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
